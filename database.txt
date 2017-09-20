@@ -1,0 +1,14 @@
+doctor: {
+ name: fio,
+ specialization,
+ facility,
+ start,
+ finish,
+ step,
+ quotes: [{
+    type,
+    start: time,
+    finish: time
+ }]
+
+}
