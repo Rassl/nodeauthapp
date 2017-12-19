@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,IAAI;EACF,KAAK,EAAE,IAAI",
+"sources": ["add-doctor.component.sass"],
+"names": [],
+"file": "add-doctor.component.css"
+}

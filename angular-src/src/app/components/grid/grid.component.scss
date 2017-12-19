@@ -1,0 +1,56 @@
+
+.grid-section {
+  background: #fff;
+}
+.grid-section__header {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+.grid-section__content {
+  overflow: auto;
+  height: 70vh;
+
+}
+.grid-section__items {
+  white-space: nowrap;
+}
+.grid-item {
+  display: inline-block;
+  width: 165px;
+  margin: 10px;
+  vertical-align: top;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #D4E0E2;
+  min-height: 1200px;
+}
+.grid-item__date {
+  background: #000;
+  color: #fff;
+  padding: 5px;
+}
+.grid-item_name {
+  background: #737c82;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding: 5px;
+}
+.grid-item__specialisation {
+  background: #737c82;
+  color: #fff;
+  padding: 5px;
+}
+.grid-item__cabinet {
+  background: deepskyblue;
+  color: #000;
+  padding: 5px;
+}
+.grid-tem__occupation {
+  background: #eee;
+  color: #000;
+  border-bottom: 1px dashed #333333;
+}
+
+app-grid {
+  background: blue;
+}

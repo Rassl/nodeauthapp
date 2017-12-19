@@ -1,0 +1,33 @@
+<section class="grid-section">
+    <header class="grid-section__header">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Agenda</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="showSchedule(1)" class="btn btn-secondary">1 day</button>
+            <button type="button" (click)="showSchedule(2)" class="btn btn-secondary">2 days</button>
+            <button type="button" (click)="showSchedule(3)" class="btn btn-secondary">3 days</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="grid-section__content">
+        <p class="grid-section__init-text" *ngIf="gridItems.length < 1" >
+            Для начала работы сделайте выбор{{gridItems.length}}
+        </p>
+        <div class="grid-section__items" *ngIf="gridItems.length">
+            <div class="grid-item" *ngFor="let item of gridItems">
+                <div class="grid-item__date">{{item.date}}</div>
+                <div class="grid-item_name">{{item.doctor.name}}</div>
+                <div class="grid-item__specialisation">{{item.doctor.specialization}}</div>
+                <div class="grid-item__cabinet">{{item.doctor.facility}}|{{item.doctor.cabinet}}</div>
+                <div *ngFor="let time of item.doctor.quotes" class="grid-tem__occupation" (click)="makeAppointment(time.quoteTime, time.quoteType)">
+                    <span>{{time.quoteTime}}</span>
+                    <span>{{time.quoteType}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
