@@ -1,8 +1,11 @@
 <div *ngIf="user">
-  <h2 class="page-header">{{user.name}}</h2>
-  <ul class="list-group">
-    <li class="list-group-item">Username: {{user.username}}</li>
-    <li class="list-group-item">Email: {{user.email}}</li>
-  </ul>
-
+  <h2 class="page-header">Admin: {{user.name}}</h2>
+  <div class="jumbotron text-center">
+    <h1>Выберите действие</h1>
+    <div>
+      <a [routerLink]="['/dashboard']" class="btn btn-primary">Добавить запись</a>
+      <a [routerLink]="['/newdoctor']" class="btn btn-default">Добавить врача</a>
+      <a [routerLink]="['/newpatient']" class="btn btn-default">Добавить пациента</a>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,12 @@
+.navbar-brand {
+    color: #fff;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    margin-right: 7px;
+    transition: all 0.2s linear;
+}
+.navbar-brand:hover {
+    background: #000000;
+    color: #fff;
+}

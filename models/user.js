@@ -45,9 +45,6 @@ module.exports.addUser = function(newUser, callback){
 module.exports.comparePassword = function(candidatePassword, hash, callback){
   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
 
-    console.log(candidatePassword);
-    console.log(hash);
-
     if(err) throw err;
     callback(null, isMatch);
   });

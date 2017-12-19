@@ -10,5 +10,4 @@ doctor: {
     start: time,
     finish: time
  }]
-
 }

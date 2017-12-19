@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
-    console.log(user);
 
     this.authService.authenticateUser(user).subscribe(data => {
       if(data.success) {
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.flashMessage.show(data.msg,
           {cssClass: 'alert-success',
             timeout: 3000});
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['profile']);
 
       } else {
         this.flashMessage.show(data.msg,

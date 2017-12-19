@@ -1,3 +1,63 @@
-<p>
-  sidebar works!
-</p>
+<section class="sidebar">
+    <form action="">
+        <div class="form-group">
+            <h4 class="form-group__title">
+                Patient
+            </h4>
+            <button type="button" class="form-group__button btn btn-success" (click)="patient !== null && togglePatientMenu()" [attr.disabled]="patient ? null : true ">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+            </button>
+            <div class="patient-menu" *ngIf="showPatientMenu" (click)="finishWithThisPatient()">
+                <span>
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                </span>
+                <span>завершить работу с пациентом</span>
+            </div>
+            <div class="patient-info" *ngIf="patient">
+                {{patient.name}}<br>
+                {{patient.birthdate}}<br>
+                Полис ОМС: {{patient.insurance}}
+            </div>
+            <app-autocomplete *ngIf="!patient" (onSelectItem)="onSelectItem($event)">></app-autocomplete>
+            <hr>
+        </div>
+
+        <div class="form-group">
+            <h4>Date</h4>
+            <material-datepicker [(date)]="yourModelDate"></material-datepicker>
+            <hr>
+        </div>
+
+        <div class="form-group">
+            <h4 class="form-group__title">Specialists|<span *ngIf="doctorsArray"> {{ doctorsArray.length }}</span></h4>
+            <button type="button" class="form-group__button btn btn-success" disabled>
+                <i class="fa fa-filter" aria-hidden="true"></i>
+                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+            </button>
+            <div class="input-group">
+                <input type="text" name="term" [(ngModel)]="term" class="form-control" placeholder="Recipient's username"
+                aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon2">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+            </div>
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Specialization</button>
+                <button type="button" class="btn btn-secondary">Alphabet</button>
+            </div>
+            <br>
+            <br>
+            <div class="specialist-list-wrapper">
+                <ul class="specialists-list">
+                    <li class="specialists-list__item"
+                    *ngFor="let doctor of doctorsArray | filter:term ;  let l = count; let i = index" >
+                        <input type="checkbox" (change)="passDoctors(doctor)">
+                        <label>{{doctor.name}}</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</section>

@@ -36,7 +36,6 @@ export class RegisterComponent implements OnInit {
 
     //Required Fields
     if(!this.validateService.validateRegister(user)) {
-      console.log('Please fill fields');
       this.flashMessage.show('Please fill fields', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
@@ -51,8 +50,6 @@ export class RegisterComponent implements OnInit {
       if(data.success) {
         this.flashMessage.show('User registered', {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/login']);
-        console.log(user);
-        console.log(data);
       } else {
         this.flashMessage.show('SOmething is wrong', {cssClass: 'alert-danger', timeout: 3000});
         this.router.navigate(['/register']);
